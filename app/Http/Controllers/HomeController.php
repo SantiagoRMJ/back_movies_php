@@ -11,9 +11,9 @@ class HomeController extends Controller
     public function index(){
        //$users = DB::table('citas_db.Usuarios')->get();
         
-            $citas = DB::table('citas_db.Citas')
+            $citas = DB::table('citas_db._citas')
                 //->from('Citas')
-                ->join('Usuarios', 'Citas.UsuarioId', '=',  'Usuarios.id')
+                ->join('users', '_citas.userId', '=',  'users.id')
                 ->select('*')
                 ->get();
 
